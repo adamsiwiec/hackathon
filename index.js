@@ -4,10 +4,10 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var Twitter = require('node-tweet-stream'),
     t = new Twitter({
-        consumer_key: process.env.consumer_key,
-        consumer_secret: process.env.consumer_secret,
-        token: process.env.token,
-        token_secret: process.env.token_secret
+        consumer_key: 'abnmh1INtFckAHTxt8Y8bXEWa',
+        consumer_secret: 'AXLq8s6ZQI1OSMYuMcQ5J1xfm2s8i6vFJmFsgfTGEsXqiJnLs7',
+        token: '767427201293705216-wlhE8wiLim1MSELq7GmOq16P6g5TNxu',
+        token_secret: 'rP5MIA6gt0nJNLHMGuVuoYTPJmUgq1dfT3tqmUyEQy8lM'
     });
 
 var tweetcount = 0;
