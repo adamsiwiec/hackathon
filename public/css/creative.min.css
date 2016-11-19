@@ -45,7 +45,7 @@ form-group {
 
 ul {
 
-    margin-left: 20%;
+    margin-left: 18%;
     padding: 0;
 }
 .submit {
@@ -57,9 +57,16 @@ ul {
     margin-bottom: 20px;
 }
 
+#none {
+    margin-right: 18%;
+
+}
 @media only screen and (max-width: 900px) {
     ul {
         margin: 0;
+    }
+    #none {
+        margin-right: 0;
     }
 
 }
