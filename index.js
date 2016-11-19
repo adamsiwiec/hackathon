@@ -38,13 +38,13 @@ t.on('tweet', function(tweet) {
         payment = 0.04;
         io.emit('fundraise', payment);
     }
-})
+});
 
 t.on('error', function(err) {
     console.log('Oh no')
-})
+});
 
-t.track('prince');
+t.track('nwahackathon');
 
 
 app.use('/', express.static('public'));
