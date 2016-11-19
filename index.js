@@ -10,6 +10,8 @@ var Twitter = require('node-tweet-stream'),
         token_secret: 'rP5MIA6gt0nJNLHMGuVuoYTPJmUgq1dfT3tqmUyEQy8lM'
     });
 
+app.set('port', (process.env.PORT || 3000));
+
 var tweetcount = 0;
 var participants = [];
 var num_part = 0;
@@ -67,6 +69,6 @@ io.on('connection', function(socket) {
 });
 
 
-http.listen(80, function() {
+http.listen(app.get('port'), function() {
     console.log('listening on *:3000');
 });
