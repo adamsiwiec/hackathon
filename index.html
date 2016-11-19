@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Morgan 123123123</title>
+    <title>News ID</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -43,23 +43,17 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand page-scroll" href="#page-top">News ID</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="/hackathon?keywords=hackathon">API</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Services</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="#services">About</a>
                     </li>
                 </ul>
             </div>
@@ -68,35 +62,33 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <header>
+    <header id = "header-content">
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 id="homeHeading">Community Connections</h1>
-                <hr>
-                <p>Post and find volunteer oppurtunities in your community</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Sign Up</a>
+                <h1 id="homeHeading">NEWS ID</h1>
+                <p>Search and Find Curated Hackers News Articles</p>
+                <br>
+               <form id="formie">
+                    <div >
+                        <input type="string"  class = "form-control" name="keywords" id ="m" placeholder="e.g. JavaScript Hackathon">
+                        <input type="submit" value ="Get News" class="submit btn btn-primary btn-xl page-scroll">
+                   </div>
+                </form>
+
+
             </div>
+            <ul id="articles" class ="offset-md-2">
+            </ul>
         </div>
     </header>
 
-    <section class="bg-primary" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">The world needs volunteers. The world needs you.</h2>
-                    <hr class="light">
-                    <p class="text-faded">Our goal is to connect volunteers with groups looking for volunteers to help with anything from small tasks to large events, such as concerts, blood drives,  and animal shelters. </p>
-                    <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <section id="services">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">At Your Service</h2>
+                    <h2 class="section-heading">Custom News, Just for You</h2>
                     <hr class="primary">
                 </div>
             </div>
@@ -106,35 +98,47 @@
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
-                        <h3>Sturdy Templates</h3>
-                        <p class="text-muted">Our templates are updated regularly so they don't break.</p>
+                        <h3>Discover</h3>
+                        <p class="text-muted">Find articles you are actually interested in.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
-                        <h3>Ready to Ship</h3>
-                        <p class="text-muted">You can use this theme as is, or you can make changes!</p>
+                        <h3>Fast</h3>
+                        <p class="text-muted">Don't spend hours flicking through news feeds!</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i>
                         <h3>Up to Date</h3>
-                        <p class="text-muted">We update dependencies to keep things fresh.</p>
+                        <p class="text-muted"> HN articles published in the last 24 hours are added to the index </p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
-                        <h3>Made with Love</h3>
-                        <p class="text-muted">You have to make your websites with love these days!</p>
+                        <h3>Keep things Fresh</h3>
+                        <p class="text-muted">Try new keywords to find what topics you love!</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
+    <section class="bg-primary" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">The world needs better news, and we are here to help.</h2>
+                    <hr class="light">
+                    <p class="text-faded">Our goal is to connect useful information with people looking for adventure and knowledge. </p>
+                    <a href="#header-content" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--
     <section class="no-padding" id="portfolio">
         <div class="container-fluid">
             <div class="row no-gutter popup-gallery">
@@ -260,6 +264,7 @@
             </div>
         </div>
     </section>
+-->
 
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -271,9 +276,33 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
     <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
     <!-- Theme JavaScript -->
     <script src="js/creative.min.js"></script>
+
+
+    <script>
+        $("#formie").on("submit", function(e) {
+            e.preventDefault();
+            var data;
+            $( "#articles" ).empty();
+            $.get("/hackathon", {
+                keywords: $('#m').val()
+            }, function(datas, status) {
+                console.log("Data: " + data + "\nStatus: " + status);
+                data = datas;
+
+                console.log(data);
+                if (data.length > 9) {
+                    data = data.splice()
+                }
+
+                for (var i = 0; i < data.length; i++) {
+                    $("#articles").append('<a href="' + data[i][0] + '"><li class = "guide col-md-3">' + data[i][1] + "</li></a>");
+                }
+            });
+
+        });
+    </script>
 
 
 </body>

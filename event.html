@@ -1,85 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages li { padding: 5px 10px; }
+      #messages li:nth-child(odd) { background: #eee; }
+    </style>
+  </head>
+  <body>
+    <ul id="messages"></ul>
+    <form action="/api/curate">
+      <input id="m" autocomplete="off" /><button>Send</button>
+    </form>
+    <script src="vendor/jquery/jquery.min.js"></script>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/flipclock.css">
-</head>
-
-<body>
-
-    countdown
-    <div class="clock"></div>
-    participants
-    <h1 class="participants">0</h1> money fundraised
-    <h1 class="raised">$0</h1> tweet count
-    <h1 class="tweet_count">0</h1> Donation per post
-    <h1 class="donation">$0</h1> Goal
-    <h1 class="goal"></h1>
-    <h1>NWA Hackathon Twitter Fundraiser</h1>
-    <ul id="messages">
-
-    </ul>
-    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script src="js/flipclock.min.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
 
     <script>
-        function round(value, decimals) {
-            return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
-        }
-        var currentDate = new Date();
-
-        // Set some date in the future. In this case, it's always Jan 1
-        var futureDate = new Date("November 19, 2016 20:30:00");
-
-        // Calculate the difference in seconds between the future and current date
-        var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
-
-        // Instantiate a coutdown FlipClock
-        clock = $('.clock').FlipClock(diff, {
-            clockFace: 'DailyCounter',
-            countdown: true
-        });
-
         var socket = io();
-        var fundraised = 0;
-        var goal = 10;
 
-        $('.goal').text = goal;
-
-        if (total > goal) {
-            alert('GOAL IS REACHED!!!!');
-        }
-
-        socket.on('tweet count', function(msg) {
-
-            var total = round(msg * fundraised, 2)
-            $('.tweet_count').text(msg);
-            $('.raised').text('$' + total);
+        $('form').submit(function() {
+            var keywords = $('#m').val().split(' ');
+            console.log(keywords);
+            socket.emit('keywords incoming', keywords);
+            $('#m').val('');
+            return false;
         });
 
-        socket.on('new tweet', function(msg) {
-            $('#messages').append($('<li>').text(msg.text));
-            $('#messages').append($('<li>').text(msg.user.name));
+        socket.emit('test', "test");
 
-        });
-
-        socket.on('participants', function(particpants) {
-            console.log(particpants);
-            $('.participants').text(particpants);
-        });
-
-        socket.on('fundraise', function(money) {
-
-            fundraised = money;
-
-            $('.donation').text('$' + money);
-        });
     </script>
-</body>
-
+  </body>
 </html>
