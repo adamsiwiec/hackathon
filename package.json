@@ -1,0 +1,10 @@
+{
+  "name": "volunteer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Adam Siwiec <brickmaster01@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
