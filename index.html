@@ -161,22 +161,27 @@
             $.get("/hackathon", {
                 keywords: $('#m').val()
             }, function(datas, status) {
-                console.log("Data: " + data + "\nStatus: " + status);
+                console.log("Data: " + datas + "\nStatus: " + status);
 
-                if (!data) {
+                data = datas;
+
+                if (data === []) {
                     $("#articles").append('<p id = "none">No Articles for ' + $('#m').val() + '. Check back later👍!')
                 }
-                data = datas;
+                for (var i = 0; i < data.length; i++) {
+                    $("#articles").append('<a href="' + data[i][0] + '"><li class = "guide col-md-3">' + data[i][1] + "</li></a>");
+                }
+
+
 
                 console.log(data);
                 if (data.length > 9) {
                     data = data.splice()
                 }
 
-                for (var i = 0; i < data.length; i++) {
-                    $("#articles").append('<a href="' + data[i][0] + '"><li class = "guide col-md-3">' + data[i][1] + "</li></a>");
-                }
+
             });
+
 
         });
     </script>

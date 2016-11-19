@@ -35,6 +35,8 @@ form-group {
 .guide {
     overflow:overlay;
     margin: 15px;
+
+    float: center;
     padding: 10px;
     height: 80px;
     list-style: none;
