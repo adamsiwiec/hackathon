@@ -37,7 +37,7 @@ app.get('/hackathon', function(req, res) {
                 var splitUp = data.hits[i].title.split(' ');
                 for (var k = 0; k < keywords.length; k++) {
                     if (splitUp.indexOf(keywords[k]) !== -1) {
-                         var temp = [data.hits[i].url, data.hits[i].title];
+                        var temp = [data.hits[i].url, data.hits[i].title];
                         curated.push(temp);
                         break;
                     }
@@ -46,7 +46,7 @@ app.get('/hackathon', function(req, res) {
                         curated.push(temp);
                         break;
 
-                }
+                    }
 
 
                 }
@@ -61,7 +61,6 @@ app.get('/hackathon', function(req, res) {
 
             }
             res.json(curated);
-            console.log(curated);
         });
     }
 });

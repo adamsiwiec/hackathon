@@ -62,22 +62,23 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <header id = "header-content">
+    <header id="header-content">
         <div class="header-content">
             <div class="header-content-inner">
                 <h1 id="homeHeading">NEWS ID</h1>
                 <h3>Search and Find Curated Hackers News Articles</h3>
                 <br>
-               <form id="formie">
-                    <div >
-                        <input type="string"  class = "form-control" name="keywords" id ="m" placeholder="e.g. JavaScript">
-                        <input type="submit" value ="Get News" class="submit btn btn-primary btn-xl page-scroll">
-                   </div>
+                <form id="formie">
+                    <div>
+                        <input type="string" class="form-control" name="keywords" id="m" placeholder="e.g. JavaScript">
+                        <input type="submit" value="Get News" class="submit btn btn-primary btn-xl page-scroll">
+                    </div>
                 </form>
 
 
             </div>
-            <ul id="articles" class ="offset-md-2">
+            <div style="display: none" class="loader">Loading...</div>
+            <ul id="articles" class="offset-md-2">
             </ul>
         </div>
     </header>
@@ -155,26 +156,26 @@
 
     <script>
         $("#formie").on("submit", function(e) {
+            $('.loader').css('display', 'block');
             e.preventDefault();
             var data;
-            $( "#articles" ).empty();
+            $("#articles").empty();
             $.get("/hackathon", {
                 keywords: $('#m').val()
             }, function(datas, status) {
-                console.log("Data: " + datas + "\nStatus: " + status);
-
                 data = datas;
 
                 if (data === []) {
                     $("#articles").append('<p id = "none">No Articles for ' + $('#m').val() + '. Check back later👍!')
                 }
-                for (var i = 0; i < data.length; i++) {pm
+                $('.loader').css('display', 'none');
+
+                for (var i = 0; i < data.length; i++) {
                     $("#articles").append('<a href="' + data[i][0] + '"><li class = "guide col-md-3">' + data[i][1] + "</li></a>");
                 }
 
 
 
-                console.log(data);
                 if (data.length > 9) {
                     data = data.splice()
                 }
