@@ -1,5 +1,5 @@
 {
-  "name": "volunteer",
+  "name": "newsid",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Adam Siwiec <brickmaster01@gmail.com>",
@@ -7,6 +7,9 @@
   "scripts": {
     "start": "node index.js"
   },
+  "engines": {
+    "node": ">=8.1.4"
+},
   "dependencies": {
     "body-parser": "^1.15.2",
     "compression": "^1.6.2",
